@@ -94,10 +94,6 @@ export default {
 
 
 <style  lang="scss">
-$orange: #FFA800;
-$red: #fF3d00;
-$black: #001529;
-$orangeGradient: radial-gradient(81.88% 81.88% at 50% 81.88%, #FF3D00 0%, #FFA800 100%);
 
 .ant-layout {
   height: 100vh;

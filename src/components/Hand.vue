@@ -36,9 +36,6 @@ export default {
 </script>
 
 <style  lang="scss">
-$grey: #515151;
-$dark_grey: #1A1B26;
-
 .handRoot {
     margin-top: 20px;
         display: flex;
