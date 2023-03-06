@@ -1,0 +1,222 @@
+
+export const data = [
+{ name: "Goldo Azurevein", deck: [
+ {
+   "Number": "BA01",
+   "Name": "Retreat",
+   "Proficiency": "Basic",
+   "Traits": "Basic | Movement",
+   "Flavour Text": "Sometimes, you just have to stand up for what you believe in. Other times, you don’t.",
+   "Description": "Move up to 30 feet away from all enemies you are currently engaged with.",
+   "Start in Hand": 0,
+   "Remove From Game": 1,
+   "Persists": 0,
+   "Exclude from Deck": 0
+ },
+ {
+   "Number": "BA02",
+   "Name": "Evade",
+   "Proficiency": "Basic",
+   "Traits": "Basic | Movement",
+   "Flavour Text": "Sometimes, not being in the way is all it takes.",
+   "Description": "Negate D6 wounds from the next incoming attack.",
+   "Start in Hand": 0,
+   "Remove From Game": 1,
+   "Persists": 0,
+   "Exclude from Deck": 0
+ },
+ {
+   "Number": "BW01",
+   "Name": "Throw weapon",
+   "Proficiency": "Bladed Weapons",
+   "Traits": "Bladed Weapon | Beginner | Attack | Movement",
+   "Flavour Text": "You’ll get it back. Probably.",
+   "Description": "When you reveal this card, you may discard a Bladed Weapon card from your hand. If you do so, deal 1D6+STR damage to any unengaged enemy and engage it.",
+   "Start in Hand": 1,
+   "Remove From Game": 1,
+   "Persists": 0,
+   "Exclude from Deck": 0
+ },
+ {
+   "Number": "BW02",
+   "Name": "Slice",
+   "Proficiency": "Bladed Weapons",
+   "Traits": "Bladed Weapon | Beginner | Attack | Blade",
+   "Flavour Text": "Show your opponent that you’re a cut above the rest.",
+   "Description": "Target a character you are engaged with and deal 1D6+STR damage.",
+   "Start in Hand": 0,
+   "Remove From Game": 0,
+   "Persists": 0,
+   "Exclude from Deck": 0
+ },
+ {
+   "Number": "BW03",
+   "Name": "Stab",
+   "Proficiency": "Bladed Weapons",
+   "Traits": "Bladed Weapon | Beginner | Attack | Blade",
+   "Flavour Text": "This won’t be easy, but it’s worth taking a stab at it.",
+   "Description": "Target a character you are engaged with and deal 1D4+STR damage. If the result of your Attack roll is a 4, deal an additional 1D6 damage.",
+   "Start in Hand": 0,
+   "Remove From Game": 0,
+   "Persists": 0,
+   "Exclude from Deck": 0
+ },
+ {
+   "Number": "BW03",
+   "Name": "Wild Swings",
+   "Proficiency": "Bladed Weapons",
+   "Traits": "Bladed Weapon | Beginner",
+   "Flavour Text": "They’re not wild, they’re just, improvised?",
+   "Description": "Target a character you are engaged with and deal 2D3 damage. This card is not discarded at the end of your turn.",
+   "Start in Hand": 0,
+   "Remove From Game": 0,
+   "Persists": 0,
+   "Exclude from Deck": 0
+ },
+ {
+   "Number": "BW05",
+   "Name": "Parry",
+   "Proficiency": "Bladed Weapons",
+   "Traits": "Bladed Weapon | Beginner",
+   "Flavour Text": "A shield would be better, but maybe if you get the timing right...",
+   "Description": "Negate 1D6 damage from the next incoming attack, to a maximum of half the total damage. Discard this card at the end of the Battle Round.",
+   "Start in Hand": 0,
+   "Remove From Game": 0,
+   "Persists": 0,
+   "Exclude from Deck": 0
+ },
+ {
+   "Number": "BW06",
+   "Name": "Fighting Retreat",
+   "Proficiency": "Bladed Weapons",
+   "Traits": "Bladed Weapon | Beginner",
+   "Flavour Text": "You’re not running away, you’re retreating. It’s different.",
+   "Description": "Deal 1D4 damage to the enemy character your are engaged with and move 10 feet directly away from that character.  You can only play this card if you are Engaged with a single enemy character.",
+   "Start in Hand": 0,
+   "Remove From Game": 0,
+   "Persists": 0,
+   "Exclude from Deck": 0
+ },
+ {
+   "Number": "R06",
+   "Name": "Draconin Breath",
+   "Proficiency": "Racial",
+   "Traits": "Draconin | Attack",
+   "Flavour Text": "Not everyone believes that you’re descended from the dragons of old, but this is going to be pretty convincing.",
+   "Description": "Deal 1D6 damage to all characters within 10 feet.",
+   "Start in Hand": 0,
+   "Remove From Game": 0,
+   "Persists": 0,
+   "Exclude from Deck": 0
+ }
+]}, 
+{ name: "Rhokk, just Rhokk", deck: [
+  {
+    "Number": "BA01",
+    "Name": "Retreat",
+    "Proficiency": "Basic",
+    "Traits": "Basic | Movement",
+    "Flavour Text": "Sometimes, you just have to stand up for what you believe in. Other times, you don’t.",
+    "Description": "Move up to 30 feet away from all enemies you are currently engaged with.",
+    "Start in Hand": 0,
+    "Remove From Game": 1,
+    "Persists": 0,
+    "Exclude from Deck": 0
+  },
+  {
+    "Number": "BA02",
+    "Name": "Evade",
+    "Proficiency": "Basic",
+    "Traits": "Basic | Movement",
+    "Flavour Text": "Sometimes, not being in the way is all it takes.",
+    "Description": "Negate D6 wounds from the next incoming attack.",
+    "Start in Hand": 0,
+    "Remove From Game": 1,
+    "Persists": 0,
+    "Exclude from Deck": 0
+  },
+  {
+    "Number": "BW01",
+    "Name": "Throw weapon",
+    "Proficiency": "Bladed Weapons",
+    "Traits": "Bladed Weapon | Beginner | Attack | Movement",
+    "Flavour Text": "You’ll get it back. Probably.",
+    "Description": "When you reveal this card, you may discard a Bladed Weapon card from your hand. If you do so, deal 1D6+STR damage to any unengaged enemy and engage it.",
+    "Start in Hand": 1,
+    "Remove From Game": 1,
+    "Persists": 0,
+    "Exclude from Deck": 0
+  },
+  {
+    "Number": "BW02",
+    "Name": "Slice",
+    "Proficiency": "Bladed Weapons",
+    "Traits": "Bladed Weapon | Beginner | Attack | Blade",
+    "Flavour Text": "Show your opponent that you’re a cut above the rest.",
+    "Description": "Target a character you are engaged with and deal 1D6+STR damage.",
+    "Start in Hand": 0,
+    "Remove From Game": 0,
+    "Persists": 0,
+    "Exclude from Deck": 0
+  },
+  {
+    "Number": "BW03",
+    "Name": "Stab",
+    "Proficiency": "Bladed Weapons",
+    "Traits": "Bladed Weapon | Beginner | Attack | Blade",
+    "Flavour Text": "This won’t be easy, but it’s worth taking a stab at it.",
+    "Description": "Target a character you are engaged with and deal 1D4+STR damage. If the result of your Attack roll is a 4, deal an additional 1D6 damage.",
+    "Start in Hand": 0,
+    "Remove From Game": 0,
+    "Persists": 0,
+    "Exclude from Deck": 0
+  },
+  {
+    "Number": "BW03",
+    "Name": "Wild Swings",
+    "Proficiency": "Bladed Weapons",
+    "Traits": "Bladed Weapon | Beginner",
+    "Flavour Text": "They’re not wild, they’re just, improvised?",
+    "Description": "Target a character you are engaged with and deal 2D3 damage. This card is not discarded at the end of your turn.",
+    "Start in Hand": 0,
+    "Remove From Game": 0,
+    "Persists": 0,
+    "Exclude from Deck": 0
+  },
+  {
+    "Number": "BW05",
+    "Name": "Parry",
+    "Proficiency": "Bladed Weapons",
+    "Traits": "Bladed Weapon | Beginner",
+    "Flavour Text": "A shield would be better, but maybe if you get the timing right...",
+    "Description": "Negate 1D6 damage from the next incoming attack, to a maximum of half the total damage. Discard this card at the end of the Battle Round.",
+    "Start in Hand": 0,
+    "Remove From Game": 0,
+    "Persists": 0,
+    "Exclude from Deck": 0
+  },
+  {
+    "Number": "BW06",
+    "Name": "Fighting Retreat",
+    "Proficiency": "Bladed Weapons",
+    "Traits": "Bladed Weapon | Beginner",
+    "Flavour Text": "You’re not running away, you’re retreating. It’s different.",
+    "Description": "Deal 1D4 damage to the enemy character your are engaged with and move 10 feet directly away from that character.  You can only play this card if you are Engaged with a single enemy character.",
+    "Start in Hand": 0,
+    "Remove From Game": 0,
+    "Persists": 0,
+    "Exclude from Deck": 0
+  },
+  {
+    "Number": "R06",
+    "Name": "Draconin Breath",
+    "Proficiency": "Racial",
+    "Traits": "Draconin | Attack",
+    "Flavour Text": "Not everyone believes that you’re descended from the dragons of old, but this is going to be pretty convincing.",
+    "Description": "Deal 1D6 damage to all characters within 10 feet.",
+    "Start in Hand": 0,
+    "Remove From Game": 0,
+    "Persists": 0,
+    "Exclude from Deck": 0
+  }
+ ]}]
