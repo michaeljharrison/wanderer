@@ -47,21 +47,15 @@ export default {
     
 .ant-list-items {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
     flex-grow:1;
     flex-shrink:1;
     padding: 0px;
     .ant-list-item {
-      flex-grow:1;
-      .ant-btn {
-        width: 50vw;
-        height: 60px;
-        p {
-            font-size: 24px;
-            margin: 0px;
-        }
-      }
+
     }
   }
   h2 {
