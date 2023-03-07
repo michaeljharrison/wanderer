@@ -31,8 +31,5 @@ export default {
 </script>
 
 <style  lang="scss">
-.handRoot {
-    margin-top: 20px;
-        display: flex;
-        flex-direction: row;
-}</style>
+
+</style>

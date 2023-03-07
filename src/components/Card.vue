@@ -1,5 +1,16 @@
 
 <template>
+    <div class="cardWrapper row">
+      
+        <div v-if="card" class="cardActions">
+            <a-button shape="circle">
+                <template #icon><SearchOutlined /></template>
+              </a-button> <a-button shape="circle">
+                <template #icon><SearchOutlined /></template>
+              </a-button> <a-button shape="circle">
+                <template #icon><SearchOutlined /></template>
+              </a-button>
+        </div>
     <div v-if="card" class="cardRoot">
         <div class="top">
             <Logo></Logo>
@@ -14,10 +25,12 @@
     <div v-else>
         <a-loading></a-loading>
     </div>
+</div>
 </template>
 
 <script>
 import { message } from 'ant-design-vue';
+import { SearchOutlined } from '@ant-design/icons-vue';
 import Logo from '../assets/icons/Proficiencies/BA01.svg?component'
 import { mapGetters } from 'vuex'
 export default {
@@ -39,7 +52,8 @@ export default {
         ...mapGetters(['deckList', 'drawerOpen'])
     },
     components: {
-        Logo
+        Logo,
+        SearchOutlined,
     }
 }
 </script>

@@ -65,11 +65,5 @@ export default {
 
         }
     }
-    .handWrapper {
-        margin-left: 6px;
-        margin-right: 6px;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
 }
 </style>
