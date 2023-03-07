@@ -100,3 +100,136 @@ p {
   font-family: Arvo, 'Arvo Regular', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+
+
+.cardRoot {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  width: 280px;
+  height: 400px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  background-color: $grey;
+  border: 4px solid $dark_grey;
+
+  .top {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      min-height: 40%;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+          color: white;
+      }
+
+  }
+
+  .bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      background-color: white;
+      flex-grow: 1;
+      border-radius: 20px;
+      .subtle {
+          margin-bottom: auto;
+          font-size: 10px;
+      }
+      .description {
+          margin-top: auto;
+          margin-bottom: auto;
+      }
+  }
+}
+
+
+.ant-layout {
+  height: 100vh;
+}
+
+.ant-layout-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-y: scroll;
+  .cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+  }
+}
+
+.ant-layout-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 120px;
+
+  .column {
+    margin-left: auto;
+    margin-right: auto;
+
+    h1 {
+      margin-bottom: 0px;
+      color: $orange
+    }
+
+    p {
+      color: white;
+      font-size: 12px;
+      margin: 0;
+      max-height: 14px;
+    }
+  }
+
+}
+
+.ant-layout-footer {
+  border-top:1px solid $black;
+  height: 40px;
+  padding: 0px;
+}
+
+svg.logo {
+  justify-self: flex-start;
+  width: 60px;
+  height: 60px;
+}
+
+.ant-btn {
+  background: $orange !important;
+  background-color: $orange !important;
+  border: none !important;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.subtle {
+  opacity: 0.7
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

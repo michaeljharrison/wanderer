@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
 import { message } from 'ant-design-vue';
 import { mapGetters } from 'vuex'
 export default {
@@ -41,54 +40,4 @@ export default {
 </script>
 
 <style  lang="scss">
-
-
-.cardRoot {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 20px;
-    width: 280px;
-    height: 400px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    background-color: $grey;
-    border: 4px solid $dark_grey;
-
-    .top {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        min-height: 40%;
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            color: white;
-        }
-
-    }
-
-    .bottom {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 20px;
-        padding-bottom: 10px;
-        background-color: white;
-        flex-grow: 1;
-        border-radius: 20px;
-        .subtle {
-            margin-bottom: auto;
-            font-size: 10px;
-        }
-        .description {
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-    }
-}</style>
+</style>
