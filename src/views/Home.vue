@@ -10,6 +10,7 @@
         <h1>Great to have you, {{getFirstName(currentDeck.name)}}!</h1>
         <hr style="margin-bottom: 18px;"/>
         <a-button type="primary" disabled @click="viewDeck">View Deck</a-button>
+        <a-button type="primary" @click="changeDeck">Change Deck</a-button>
         <a-button type="primary" disabled>View Guides</a-button>
         <a-button type="primary" @click="startEncounter" >Start an Encounter</a-button>
     </div>
@@ -43,6 +44,9 @@ export default {
         },
         viewDeck: function () {
             this.$store.commit('viewDeck')
+        },
+        changeDeck: function () {
+            this.$store.commit('resetDeck')
         },
         startEncounter: function () {
             message.info(`Starting new encounter.`);

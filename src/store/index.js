@@ -53,6 +53,10 @@ export const store = createStore({
       state.currentDeck = newDeck;
       state.currentState = STATES.RESTING;
     },
+    resetDeck(state, ) {
+      state.currentDeck = null;
+      state.currentState = STATES.WELCOME;
+    },
     setDeckList(state, newDeckList) {
       state.deckList = newDeckList;
     },
