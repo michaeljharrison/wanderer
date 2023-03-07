@@ -2,6 +2,7 @@
 <template>
     <div v-if="card" class="cardRoot">
         <div class="top">
+            <Logo></Logo>
             <h2>{{ card?.Name }}</h2>
             <h5>{{ card?.Traits }}</h5>
         </div>
@@ -17,6 +18,7 @@
 
 <script>
 import { message } from 'ant-design-vue';
+import Logo from '../assets/icons/Proficiencies/BA01.svg?component'
 import { mapGetters } from 'vuex'
 export default {
     name: 'Card',
@@ -36,8 +38,16 @@ export default {
     computed: {
         ...mapGetters(['deckList', 'drawerOpen'])
     },
+    components: {
+        Logo
+    }
 }
 </script>
 
 <style  lang="scss">
+svg {
+    width: 60px;
+  height: 60px;
+}
+  
 </style>

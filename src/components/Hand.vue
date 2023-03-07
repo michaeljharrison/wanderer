@@ -21,11 +21,6 @@ export default {
         }
     },
     methods: {
-        selectDeck(deck) {
-            this.$store.commit('setDeck', deck)
-            this.$store.commit('toggleDrawer')
-            message.info(`Selected ${deck.name}`);
-        }
     },
     computed: 
         mapState(['activeHand']),
@@ -40,5 +35,4 @@ export default {
     margin-top: 20px;
         display: flex;
         flex-direction: row;
-        flex-wrap:wrap;
 }</style>

@@ -1,7 +1,6 @@
 
 <template>
     <div class="deckListRoot">
-        <h2> Select your deck</h2>
         <a-list size="large" :data-source="deckList">
             <template #renderItem="{ item }">
                 <a-list-item><a-button type="primary" @click="selectDeck(item)">
@@ -55,7 +54,7 @@ export default {
     flex-shrink:1;
     padding: 0px;
     .ant-list-item {
-
+        border-bottom: 0px;
     }
   }
   h2 {

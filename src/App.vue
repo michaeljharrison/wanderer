@@ -1,8 +1,7 @@
 <template>
   <a-layout>
-    
     <a-layout-content>
-      <div v-if="currentState === STATES.WELCOME">
+      <div v-if="currentState === STATES.WELCOME || currentState === STATES.RESTING" class="menu">
         <home></home>
       </div>
       <div v-else-if="currentState === STATES.ENCOUNTER">
@@ -42,9 +41,7 @@ export default {
       this.$store.commit('toggleDrawer')
     },
 
-    startEncounter: function () {
-      this.$store.commit('toggleActiveEncounter')
-    },
+
 
     onClose: function () {
       this.$store.commit('toggleDrawer')
