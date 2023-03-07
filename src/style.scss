@@ -1,6 +1,7 @@
 $grey: #515151;
 $dark_grey: #1A1B26;
-$orange: #FFA800;
+$orange: #DB7600;
+$light-orange: #FEA237;
 $red: #fF3d00;
 $black: #001529;
 $orangeGradient: radial-gradient(81.88% 81.88% at 50% 81.88%, #FF3D00 0%, #FFA800 100%);
@@ -158,6 +159,10 @@ p {
 }
 
 .ant-layout-content {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 20px;
@@ -207,13 +212,27 @@ svg.logo {
   width: 60px;
   height: 60px;
 }
-
 .ant-btn {
-  background: $orange !important;
-  background-color: $orange !important;
-  border: none !important;
-  margin-left: 5px;
-  margin-right: 5px;
+  min-width: 117px;
+  height: 40px;
+  padding: 10px;
+  background: $orange;
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  p {
+     
+      font-family: 'Arvo';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+  }
+}
+.ant-btn .disabled {
+  opacity: 0.5;
+}
+.ant-btn:hover {
+  background: $light-orange !important;
 }
 
 .subtle {

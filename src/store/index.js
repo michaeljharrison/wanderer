@@ -2,6 +2,15 @@ import { createStore } from "vuex";
 import { data } from "../data/stub";
 import _ from "lodash";
 
+export const STATES = {
+  WELCOME: 'welcome',
+  RESTING: 'resting',
+  VIEW_DECK: 'view_deck',
+  VIEW_GUIDES: 'view_guides',
+  ENCOUNTER: 'encounter',
+
+}
+
 // Create a new store instance.
 export const store = createStore({
   state() {
@@ -13,6 +22,7 @@ export const store = createStore({
       activeHand: [],
       activeDeck: [],
       activeDiscard: [],
+      currentState: STATES.WELCOME
     };
   },
   getters: {
