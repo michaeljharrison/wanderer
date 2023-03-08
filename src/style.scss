@@ -20,7 +20,7 @@ $redGradient: radial-gradient(100% 100% at 50% 100%, #841800 0%, #570200 100%);
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0);
-  background-color: #242424;
+  background-color: rgba(0, 0, 0, 0);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -80,8 +80,8 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
   }
   a:hover {
     color: #747bff;
@@ -116,7 +116,6 @@ p {
   margin-left: 6px;
   margin-right: 6px;
   overflow: visible;
-  margin-bottom: 40px;
   .handRoot {
     display: flex;
     flex-direction: row;
@@ -131,12 +130,23 @@ p {
       .cardActions {
         transition: opacity 0.3s linear;
         opacity: 0;
-        width:100%;
-        display:flex;
+        width: 100%;
+        display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-
+        .action {
+          margin-left:4px;
+          margin-right:4px;
+          .ant-btn {
+            filter: drop-shadow(0px 0px 12px rgba(0,0,0,0.75));
+          }
+          .actionDescription {
+            font-weight: 700;
+            font-size: 10px;
+            text-align: center;
+          }
+        }
       }
       .cardLogo {
         height: 80px;
@@ -147,18 +157,16 @@ p {
       transform: translate(0px, -40px) scale(1.2);
       z-index: 99;
       transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      .cardRoot {
 
+      .cardRoot {
       }
       .cardActions {
-
-        transform: translate(0, -20px);
         -webkit-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      -moz-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      -o-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      transition: opacity 0.3s linear;
-      opacity: 1;
+        -moz-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
+        -o-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
+        transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
+        transition: opacity 0.3s linear;
+        opacity: 1;
       }
     }
 
@@ -239,6 +247,7 @@ p {
 
 .ant-layout {
   height: 100vh;
+  background: rgba(0, 0, 0, 0) !important;
 }
 
 div {
@@ -323,17 +332,28 @@ svg.logo {
 }
 
 .ant-btn:hover {
-  background: #FEA237 !important;
+  background: #fea237 !important;
 }
 
 .ant-btn[disabled] {
-  background: #DB760050 !important;
+  background: #db760050 !important;
   opacity: 0.5;
 }
 
 .ant-btn:hover {
-  background: #DB760050 !important;
+  background: #db760050 !important;
   opacity: 0.5;
+}
+
+.ant-btn-circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .subtle {
@@ -357,8 +377,8 @@ svg.logo {
   background: $dark-grey !important;
   border: 3px solid orange;
   border-radius: 4px !important;
-  color: $orange;  
-  font-family: Colus, "Colus Regular", Inter, system-ui, Avenir, Helvetica,
+  color: $orange;
+  font-family: Colus, "Colus Regular", Inter, system-ui, Avenir, Helvetica;
 }
 .anticon {
   display: none !important;

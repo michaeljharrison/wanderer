@@ -1,7 +1,8 @@
 <template>
     <div v-if="currentState === STATES.ENCOUNTER" class="viewEncounterRoot row">
         <div class="leftButtons column">
-            <a-button type="primary" @click="draw"><p>Draw a Card</p></a-button>
+            <a-button v-if="activeDeck.length < 1" type="primary" @click="shuffleDiscard"><p>Shuffle Discard</p></a-button>
+            <a-button v-else  type="primary" @click="draw"><p>Draw a Card</p></a-button>
             <a-button type="primary" @click="endEncounter"><p>End Encounter</p></a-button>
         </div>
         <div class="handWrapper">
@@ -9,7 +10,10 @@
         </div>
         
         <div class="rightButtons column">
+            <a-tooltip>
+                <template #title>Coming soon.</template>
             <a-button type="primary" disabled>Encounter Guide</a-button>
+            </a-tooltip>
         </div>
         
     </div>
@@ -25,7 +29,7 @@ export default {
    
     name: 'Encounter',
     computed:
-    mapState(['currentDeck', 'activeEncounter', 'currentState']),
+    mapState(['currentDeck', 'activeDeck', 'activeHand', 'activeDiscard', 'activeEncounter', 'currentState']),
     setup() {
         
     },
@@ -41,6 +45,9 @@ export default {
         },
         draw: function () {
             this.$store.commit('draw')
+        },
+        shuffleDiscard: function () {
+            this.$store.commit('shuffleDiscard');
         }
     },
 }
@@ -51,7 +58,7 @@ export default {
     max-height: 355px;
     width: 100%;
     max-width: 100vw;
-    justify-content: space-between;
+    justify-content: center;
 
     .column {
         min-height:355px;

@@ -9,9 +9,15 @@
     <div v-else-if="currentState === STATES.RESTING" class="viewHomeRoot">
         <h1>Great to have you, {{getFirstName(currentDeck.name)}}!</h1>
         <hr style="margin-bottom: 18px;"/>
+        <a-tooltip>
+            <template #title>Coming soon.</template>
         <a-button type="primary" disabled @click="viewDeck"><p>View Deck</p></a-button>
+        </a-tooltip>
         <a-button type="primary" @click="changeDeck"><p>Change Deck</p></a-button>
+        <a-tooltip>
+            <template #title>Coming soon.</template>
         <a-button type="primary" disabled><p>View Guides</p></a-button>
+        </a-tooltip>
         <a-button type="primary" @click="startEncounter"><p>Start an Encounter</p></a-button>
     </div>
 </template>

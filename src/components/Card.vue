@@ -1,60 +1,78 @@
 
 <template>
     <div class="cardWrapper row">
-      
+
         <div v-if="card" class="cardActions">
-            <a-button shape="circle">
-                <template #icon><SearchOutlined /></template>
-              </a-button> <a-button shape="circle">
-                <template #icon><SearchOutlined /></template>
-              </a-button> <a-button shape="circle">
-                <template #icon><SearchOutlined /></template>
-              </a-button>
+            <div class="action column">
+                
+                <a-button  @click="play" shape="circle">
+                    <template #icon><img class="buttonIcon" src="src/assets/icons/play.svg"></template>
+                </a-button>
+                <p class="actionDescription">
+                    Play
+                </p>
+            </div>
+            <div class="action column">
+                <a-tooltip>
+                    <template #title>Coming soon.</template>
+                    <a-button  disabled @click="view" shape="circle">
+                        <template #icon><img class="buttonIcon" src="src/assets/icons/view.svg"></template>
+                    </a-button>
+                </a-tooltip>
+           
+            <p class="actionDescription">
+                View
+            </p>
         </div>
-    <div v-if="card" class="cardRoot">
-        <div class="top">
-            <Logo></Logo>
-            <img class="cardLogo" src="src/assets/icons/proficiencies/pb01.svg">
-            <h2>{{ card?.Name }}</h2>
-            <h5>{{ card?.Traits }}</h5>
+            <div class="action column">
+            <a-button  @click="discard" shape="circle">
+                <template #icon><img class="buttonIcon" src="src/assets/icons/discard.svg"></template>
+            </a-button>
+            <p class="actionDescription">
+                Discard
+            </p>
         </div>
-        <div class="bottom">
-            <p class="subtle">{{ card['Flavour Text'] }}</p>
-            <p class="description">{{ card['Description'] }}</p>
+        </div>
+        <div v-if="card" class="cardRoot">
+            <div class="top">
+                <img class="cardLogo" src="src/assets/icons/proficiencies/pb01.svg">
+                <h2>{{ card?.Name }}</h2>
+                <h5>{{ card?.Traits }}</h5>
+            </div>
+            <div class="bottom">
+                <p class="subtle">{{ card['Flavour Text'] }}</p>
+                <p class="description">{{ card['Description'] }}</p>
+            </div>
+        </div>
+        <div v-else>
+            <a-loading></a-loading>
         </div>
     </div>
-    <div v-else>
-        <a-loading></a-loading>
-    </div>
-</div>
 </template>
 
 <script>
 import { message } from 'ant-design-vue';
-import { SearchOutlined } from '@ant-design/icons-vue';
-import Logo from '../assets/icons/Proficiencies/BA01.svg?component'
 import { mapGetters } from 'vuex'
 export default {
     name: 'Card',
     props: ['card'],
     data() {
         return {
-
         }
     },
     methods: {
-        selectDeck(deck) {
-            this.$store.commit('setDeck', deck)
-            this.$store.commit('toggleDrawer')
-            message.info(`Selected ${deck.name}`);
+        play() {
+
+        },
+        discard() {
+            this.$store.commit('discard', this.card)
+            message.info(`Discarded ${this.card?.Name}`);
         }
     },
     computed: {
         ...mapGetters(['deckList', 'drawerOpen'])
     },
     components: {
-        Logo,
-        SearchOutlined,
     }
 }
 </script>
@@ -62,7 +80,6 @@ export default {
 <style  lang="scss">
 svg {
     width: 60px;
-  height: 60px;
+    height: 60px;
 }
-  
 </style>

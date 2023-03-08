@@ -46,7 +46,7 @@ export const store = createStore({
     },
     activeHand(state) {
       return state.activeHand;
-    }
+    },
   },
   mutations: {
     setDeck(state, newDeck) {
@@ -78,10 +78,19 @@ export const store = createStore({
       state.activeDeck = [];
       state.activeDiscard = [];
     },
+    shuffleDiscard(state) {
+      state.activeDeck = _.clone(state.activeDiscard, true).sort(() => 0.5 - Math.random());
+      state.activeDiscard = [];
+    },
     draw(state) {
-      console.log(state.activeDeck);
-      console.log(state.activeHand);
+
       state.activeHand.push(state.activeDeck.pop())
+    },
+    discard(state, card) {
+      _.remove(state.activeHand, {
+        Number: card.Number
+    });
+    state.activeDiscard.push(card)
     }
   },
 });
