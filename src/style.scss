@@ -112,6 +112,131 @@ p {
     sans-serif;
 }
 
+.cardWrapper {
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  .cardActions {
+    transition: opacity 0.3s linear;
+    opacity: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .action {
+      margin-left:4px;
+      margin-right:4px;
+      .ant-btn {
+        filter: drop-shadow(0px 0px 12px rgba(0,0,0,0.75));
+      }
+      .actionDescription {
+        font-weight: 700;
+        font-size: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  .cardLogoContainer {
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cardTextContainer {
+    flex-shrink: 1;
+  }
+
+  .cardLogo {
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+
+
+.cardRoot {
+  -webkit-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
+  -moz-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
+  -o-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
+  transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
+  transform: translate(0);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 220px;
+  max-height: 308px;
+  min-width: 220px;
+  min-height: 308px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  background: $redGradient;
+  border: 4px solid $dark_grey;
+  border-radius: 6px;
+  filter: drop-shadow(0px 2px 2px #000000);
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: stretch;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    height: 50%;
+    overflow: hidden;
+    h1,
+    h2 {
+      font-size: 20px;
+      text-transform: uppercase;
+      line-height: 24px;
+      margin-bottom: 0;
+    }
+    h3,
+    h4,
+    h5 {
+      color: white;
+      font-size: 8px;
+      font-family: Colus;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 8px;
+    padding-bottom: 8Spx;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: white;
+    flex-grow: 1;
+
+    overflow-y: auto;
+    .subtle {
+      color: black !important;
+      font-size: 9px;
+      font-style: italic;
+      line-height: 12px;
+    }
+    .description {
+      color: black !important;
+      margin: auto;
+      justify-content: center;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}
+
 .handWrapper {
   margin-left: 6px;
   margin-right: 6px;
@@ -171,9 +296,6 @@ p {
       transform: translate(0px, -40px) scale(1.2);
       z-index: 99;
       transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-
-      .cardRoot {
-      }
       .cardActions {
         -webkit-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
         -moz-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
@@ -184,82 +306,7 @@ p {
       }
     }
 
-    .cardRoot {
-      -webkit-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      -moz-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      -o-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      transform: translate(0);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      max-width: 220px;
-      max-height: 308px;
-      min-width: 220px;
-      min-height: 308px;
-      margin-bottom: 10px;
-      margin-right: 10px;
-      background: $redGradient;
-      border: 4px solid $dark_grey;
-      border-radius: 6px;
-      filter: drop-shadow(0px 2px 2px #000000);
-
-      .top {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-content: stretch;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        height: 50%;
-        overflow: hidden;
-        h1,
-        h2 {
-          font-size: 20px;
-          text-transform: uppercase;
-          line-height: 24px;
-          margin-bottom: 0;
-        }
-        h3,
-        h4,
-        h5 {
-          color: white;
-          font-size: 8px;
-          font-family: Colus;
-          letter-spacing: -0.5px;
-          text-transform: uppercase;
-          margin-bottom: 0;
-        }
-      }
-
-      .bottom {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 8px;
-        padding-bottom: 8Spx;
-        padding-left: 6px;
-        padding-right: 6px;
-        background-color: white;
-        flex-grow: 1;
-
-        overflow-y: auto;
-        .subtle {
-          color: black !important;
-          font-size: 9px;
-          font-style: italic;
-          line-height: 12px;
-        }
-        .description {
-          color: black !important;
-          margin: auto;
-          justify-content: center;
-          font-size: 12px;
-          line-height: 15px;
-        }
-      }
-    }
+    
   }
 }
 

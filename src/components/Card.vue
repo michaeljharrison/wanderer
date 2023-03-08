@@ -64,7 +64,8 @@ export default {
     },
     methods: {
         play() {
-
+            this.$store.commit('playCard', this.card)
+            message.info(`Playing ${this.card?.Name}`);
         },
         discard() {
             this.$store.commit('discard', this.card)

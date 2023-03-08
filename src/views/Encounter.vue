@@ -1,22 +1,28 @@
 <template>
-    <div v-if="currentState === STATES.ENCOUNTER" class="viewEncounterRoot row">
-        <div class="leftButtons column">
-            <a-button v-if="activeDeck.length < 1" type="primary" @click="shuffleDiscard"><p>Shuffle Discard</p></a-button>
-            <a-button v-else  type="primary" @click="draw"><p>Draw a Card</p></a-button>
-            <a-button type="primary" @click="endEncounter"><p>End Encounter</p></a-button>
+    <div>
+        <div class="focusArea">
+            <card v-if="activeCard" :card="activeCard"></card>
         </div>
-        <div class="handWrapper">
-            <hand></hand>
+        <div v-if="currentState === STATES.ENCOUNTER" class="viewEncounterRoot row">
+            <div class="leftButtons column">
+                <a-button v-if="activeDeck.length < 1" type="primary" @click="shuffleDiscard"><p>Shuffle Discard</p></a-button>
+                <a-button v-else  type="primary" @click="draw"><p>Draw a Card</p></a-button>
+                <a-button type="primary" @click="endEncounter"><p>End Encounter</p></a-button>
+            </div>
+            <div class="handWrapper">
+                <hand></hand>
+            </div>
+            
+            <div class="rightButtons column">
+                <a-tooltip>
+                    <template #title>Coming soon.</template>
+                <a-button type="primary" disabled>Encounter Guide</a-button>
+                </a-tooltip>
+            </div>
+            
         </div>
-        
-        <div class="rightButtons column">
-            <a-tooltip>
-                <template #title>Coming soon.</template>
-            <a-button type="primary" disabled>Encounter Guide</a-button>
-            </a-tooltip>
-        </div>
-        
     </div>
+    
 </template>
     
 <script>
@@ -24,12 +30,13 @@ import { STATES } from '../store';
 import { mapState } from 'vuex';
 import { message } from 'ant-design-vue';
 import Hand from '../components/Hand.vue';
+import Card from '../components/Card.vue';
 export default {
-  components: { Hand },
+  components: { Hand, Card },
    
     name: 'Encounter',
     computed:
-    mapState(['currentDeck', 'activeDeck', 'activeHand', 'activeDiscard', 'activeEncounter', 'currentState']),
+    mapState(['currentDeck', 'activeCard', 'activeDeck', 'activeHand', 'activeDiscard', 'activeEncounter', 'currentState']),
     setup() {
         
     },
@@ -54,6 +61,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.focusArea {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .viewEncounterRoot {
     max-height: 355px;
     width: 100%;

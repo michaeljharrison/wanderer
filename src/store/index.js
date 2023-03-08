@@ -3,13 +3,13 @@ import { data } from "../data/stub";
 import _ from "lodash";
 
 export const STATES = {
-  WELCOME: 'welcome',
-  RESTING: 'resting',
-  VIEW_DECK: 'view_deck',
-  VIEW_GUIDES: 'view_guides',
-  ENCOUNTER: 'encounter',
-
-}
+  WELCOME: "welcome",
+  RESTING: "resting",
+  VIEW_DECK: "view_deck",
+  VIEW_GUIDES: "view_guides",
+  ENCOUNTER: "encounter",
+  ENCOUNTER_WAIT: "encounter_wair",
+};
 
 // Create a new store instance.
 export const store = createStore({
@@ -22,7 +22,9 @@ export const store = createStore({
       activeHand: [],
       activeDeck: [],
       activeDiscard: [],
-      currentState: STATES.WELCOME
+      viewCard: null,
+      activeCard: null,
+      currentState: STATES.WELCOME,
     };
   },
   getters: {
@@ -53,7 +55,7 @@ export const store = createStore({
       state.currentDeck = newDeck;
       state.currentState = STATES.RESTING;
     },
-    resetDeck(state, ) {
+    resetDeck(state) {
       state.currentDeck = null;
       state.currentState = STATES.WELCOME;
     },
@@ -69,7 +71,9 @@ export const store = createStore({
       state.activeHand = [];
       state.activeDeck = [];
       state.activeDiscard = [];
-      state.activeDeck = _.clone(state.currentDeck.deck, true).sort(() => 0.5 - Math.random());
+      state.activeDeck = _.clone(state.currentDeck.deck, true).sort(
+        () => 0.5 - Math.random()
+      );
     },
     endEncounter(state) {
       state.currentState = STATES.RESTING;
@@ -79,18 +83,22 @@ export const store = createStore({
       state.activeDiscard = [];
     },
     shuffleDiscard(state) {
-      state.activeDeck = _.clone(state.activeDiscard, true).sort(() => 0.5 - Math.random());
+      state.activeDeck = _.clone(state.activeDiscard, true).sort(
+        () => 0.5 - Math.random()
+      );
       state.activeDiscard = [];
     },
     draw(state) {
-
-      state.activeHand.push(state.activeDeck.pop())
+      state.activeHand.push(state.activeDeck.pop());
     },
     discard(state, card) {
       _.remove(state.activeHand, {
-        Number: card.Number
-    });
-    state.activeDiscard.push(card)
-    }
+        Number: card.Number,
+      });
+      state.activeDiscard.push(card);
+    },
+    playCard(state, card) {
+      state.activeCard = card;
+    },
   },
 });
