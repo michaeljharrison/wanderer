@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import { data } from "../data/stub";
+import { CARDS, DECKS, PROFICIENCIES } from "../data";
 import OBR from "@owlbear-rodeo/sdk";
 import _ from "lodash";
 
@@ -12,11 +13,36 @@ export const STATES = {
   ENCOUNTER_WAIT: "encounter_wair",
 };
 
+const populateCards = (cards) => {
+  console.log('Populating Cards');
+  const flatCards = [];
+  cards.forEach((card) => {
+    // Push the matching card in the cards array.
+    const cardFound = _.find(CARDS, { Number: card })
+    flatCards.push(cardFound);
+  });
+  console.log('End populateCards')
+  console.log(flatCards);
+  return flatCards;
+};
+
+const generateDecks = () => {
+  const flatDecks = [];
+  // For Each Deck.
+  DECKS.forEach((deck) => {
+    flatDecks.push({
+      name: deck.Owner,
+      deck: populateCards(deck.Cards?.split(", ")),
+    });
+  });
+  return flatDecks;
+};
+
 // Create a new store instance.
 export const store = createStore({
   state() {
     return {
-      deckList: data,
+      deckList: generateDecks(),
       currentDeck: null,
       drawerOpen: true,
       activeEncounter: false,
@@ -106,22 +132,22 @@ export const store = createStore({
       _.remove(state.activeHand, {
         Number: card.Number,
       });
-
     },
     revealCard(state) {
       state.cardHidden = false;
       try {
-        OBR.notification.show(`${state.currentDeck?.name} revealed ${state.activeCard?.Name}.`);
-      } catch(e) {
-        console.error('Owlbear not ready.')
-        console.error(e)
+        OBR.notification.show(
+          `${state.currentDeck?.name} revealed ${state.activeCard?.Name}.`
+        );
+      } catch (e) {
+        console.error("Owlbear not ready.");
+        console.error(e);
       }
-     
     },
     discardActive(state) {
       state.cardHidden = true;
-      state.activeDiscard.push(state.activeCard)
+      state.activeDiscard.push(state.activeCard);
       state.activeCard = null;
-    }
+    },
   },
 });

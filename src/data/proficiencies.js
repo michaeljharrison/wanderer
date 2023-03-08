@@ -1,4 +1,4 @@
-export const prficiencies = [
+export const PROFICIENCIES = [
   {
     "Number": "PB00",
     "Name": "Basic",
