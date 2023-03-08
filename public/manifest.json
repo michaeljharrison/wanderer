@@ -1,10 +1,10 @@
 {
     "name": "Wanderer",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "manifest_version": 1,
     "action": {
       "title": "Wanderer",
-      "icon": "/logo.svg",
+      "icon": "/icon.svg",
       "popover": "/",
       "height": 600,
       "width": 400
