@@ -1,6 +1,7 @@
 <template>
     <div v-if="currentState === STATES.ENCOUNTER" class="viewEncounterRoot row">
         <div class="leftButtons column">
+            <p>Cards in deck: X</p>
             <a-button v-if="activeDeck.length < 1" type="primary" @click="shuffleDiscard"><p>Shuffle Discard</p></a-button>
             <a-button v-else  type="primary" @click="draw"><p>Draw a Card</p></a-button>
             <a-button type="primary" @click="endEncounter"><p>End Encounter</p></a-button>
@@ -10,10 +11,12 @@
         </div>
         
         <div class="rightButtons column">
+            <p>Cards in Discard: X</p>
             <a-tooltip>
                 <template #title>Coming soon.</template>
             <a-button type="primary" disabled>Encounter Guide</a-button>
             </a-tooltip>
+            <a-button type="primary" disabled>View Discard</a-button>
         </div>
         
     </div>
@@ -58,11 +61,13 @@ export default {
     max-height: 355px;
     width: 100%;
     max-width: 100vw;
-    justify-content: center;
+    justify-content: space-between;
+
 
     .column {
         min-height:355px;
         justify-content: flex-end;
+        align-items: center;
         .ant-btn {
             width: 100%;
             margin-top: 6px;
