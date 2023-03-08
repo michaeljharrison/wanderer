@@ -148,8 +148,22 @@ p {
           }
         }
       }
+
+      .cardLogoContainer {
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cardTextContainer {
+        flex-shrink: 1;
+      }
+
       .cardLogo {
         height: 80px;
+        justify-content: center;
+        align-items: center;
+
       }
     }
 
@@ -195,14 +209,17 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        align-content: stretch;
+        padding-top: 4px;
+        padding-bottom: 4px;
         height: 50%;
+        overflow: hidden;
         h1,
         h2 {
-          font-size: 22px;
+          font-size: 20px;
           text-transform: uppercase;
           line-height: 24px;
+          margin-bottom: 0;
         }
         h3,
         h4,
@@ -212,6 +229,7 @@ p {
           font-family: Colus;
           letter-spacing: -0.5px;
           text-transform: uppercase;
+          margin-bottom: 0;
         }
       }
 
