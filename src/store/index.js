@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import { data } from "../data/stub";
+import OBR from "@owlbear-rodeo/sdk";
 import _ from "lodash";
 
 export const STATES = {
@@ -25,6 +26,7 @@ export const store = createStore({
       viewCard: null,
       activeCard: null,
       currentState: STATES.WELCOME,
+      cardHidden: true,
     };
   },
   getters: {
@@ -98,7 +100,28 @@ export const store = createStore({
       state.activeDiscard.push(card);
     },
     playCard(state, card) {
+      state.cardHidden = true;
       state.activeCard = card;
+      // Remove card from hand.
+      _.remove(state.activeHand, {
+        Number: card.Number,
+      });
+
     },
+    revealCard(state) {
+      state.cardHidden = false;
+      try {
+        OBR.notification.show(`${state.currentDeck?.name} revealed ${state.activeCard?.Name}.`);
+      } catch(e) {
+        console.error('Owlbear not ready.')
+        console.error(e)
+      }
+     
+    },
+    discardActive(state) {
+      state.cardHidden = true;
+      state.activeDiscard.push(state.activeCard)
+      state.activeCard = null;
+    }
   },
 });

@@ -159,6 +159,18 @@ p {
   }
 }
 
+.cardWrapper.hidden {
+  .cardActions {
+    opacity: 1;
+  }
+}
+
+.cardWrapper.active {
+  .cardActions {
+    opacity: 1;
+  }
+}
+
 
 .cardRoot {
   -webkit-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);

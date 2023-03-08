@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="focusArea">
-            <card v-if="activeCard" :card="activeCard"></card>
+            <card v-if="activeCard" :card="activeCard" :hidden="cardHidden" :active="true"></card>
         </div>
         <div v-if="currentState === STATES.ENCOUNTER" class="viewEncounterRoot row">
             <div class="leftButtons column">
@@ -44,7 +44,7 @@ export default {
 
     name: 'Encounter',
     computed:
-        mapState(['currentDeck', 'activeCard', 'activeDeck', 'activeHand', 'activeDiscard', 'activeEncounter', 'currentState']),
+        mapState(['currentDeck', 'cardHidden', 'activeCard', 'activeDeck', 'activeHand', 'activeDiscard', 'activeEncounter', 'currentState']),
     setup() {
 
     },

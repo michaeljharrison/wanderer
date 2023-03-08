@@ -1,5 +1,5 @@
 <template>
-  <a-layout>
+  <a-layout class="wanderer">
     <a-layout-content>
       <div v-if="currentState === STATES.WELCOME || currentState === STATES.RESTING" class="menu">
         <home></home>
