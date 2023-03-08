@@ -4,15 +4,15 @@
         <p>Choose your Deck to begin.</p>
         <hr/>
         <deck-list></deck-list>
-        <a-button disabled>View All Cards</a-button>
+        <a-button disabled><p>View All Cards</p></a-button>
     </div>
     <div v-else-if="currentState === STATES.RESTING" class="viewHomeRoot">
         <h1>Great to have you, {{getFirstName(currentDeck.name)}}!</h1>
         <hr style="margin-bottom: 18px;"/>
-        <a-button type="primary" disabled @click="viewDeck">View Deck</a-button>
-        <a-button type="primary" @click="changeDeck">Change Deck</a-button>
-        <a-button type="primary" disabled>View Guides</a-button>
-        <a-button type="primary" @click="startEncounter" >Start an Encounter</a-button>
+        <a-button type="primary" disabled @click="viewDeck"><p>View Deck</p></a-button>
+        <a-button type="primary" @click="changeDeck"><p>Change Deck</p></a-button>
+        <a-button type="primary" disabled><p>View Guides</p></a-button>
+        <a-button type="primary" @click="startEncounter"><p>Start an Encounter</p></a-button>
     </div>
 </template>
     

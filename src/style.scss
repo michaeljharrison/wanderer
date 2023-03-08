@@ -50,7 +50,7 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 16px;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
@@ -104,7 +104,7 @@ h4 {
     Arial, sans-serif;
 }
 h1 {
-  font-size: 20px;
+  font-size: 28px;
 }
 p {
   color: white !important;
@@ -115,7 +115,7 @@ p {
 .handWrapper {
   margin-left: 6px;
   margin-right: 6px;
-  overflow-x: auto;
+  overflow: visible;
   margin-bottom: 40px;
   .handRoot {
     display: flex;
@@ -174,7 +174,7 @@ p {
       margin-right: 10px;
       background: $redGradient;
       border: 4px solid $dark_grey;
-      transform: rotate(1deg);
+      border-radius: 6px;
       filter: drop-shadow(0px 2px 2px #000000);
 
       .top {
@@ -183,13 +183,21 @@ p {
         justify-content: flex-end;
         padding-top: 10px;
         padding-bottom: 10px;
-        min-height: 48%;
+        height: 50%;
         h1,
-        h2,
+        h2 {
+          font-size: 22px;
+          text-transform: uppercase;
+          line-height: 24px;
+        }
         h3,
         h4,
         h5 {
           color: white;
+          font-size: 8px;
+          font-family: Colus;
+          letter-spacing: -0.5px;
+          text-transform: uppercase;
         }
       }
 
@@ -197,25 +205,26 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-top: 20px;
-        padding-bottom: 10px;
+        padding-top: 8px;
+        padding-bottom: 8Spx;
         padding-left: 6px;
         padding-right: 6px;
         background-color: white;
         flex-grow: 1;
-        border-radius: 20px 20px 0px 0px;
 
         overflow-y: auto;
         .subtle {
           color: black !important;
-          margin-bottom: auto;
-          font-size: 7px;
+          font-size: 9px;
+          font-style: italic;
+          line-height: 12px;
         }
         .description {
           color: black !important;
-          margin-top: auto;
-          margin-bottom: auto;
-          font-size: 9px;
+          margin: auto;
+          justify-content: center;
+          font-size: 12px;
+          line-height: 15px;
         }
       }
     }
@@ -270,7 +279,6 @@ div {
 
     p {
       color: white;
-      font-size: 12px;
       margin: 0;
       max-height: 14px;
     }
@@ -297,20 +305,29 @@ svg.logo {
   border-radius: 2px;
   margin-left: 6px;
   margin-right: 6px;
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.3) !important;
 
   p {
     font-family: "Arvo";
     font-style: normal;
+    font-size: 16px;
     font-weight: 400;
-    font-size: 14px;
     line-height: 20px;
   }
 }
-.ant-btn .disabled {
+
+.ant-btn:hover {
+  background: #FEA237 !important;
+}
+
+.ant-btn[disabled] {
+  background: #DB760050 !important;
   opacity: 0.5;
 }
+
 .ant-btn:hover {
-  background: $light-orange !important;
+  background: #DB760050 !important;
+  opacity: 0.5;
 }
 
 .subtle {
@@ -329,4 +346,14 @@ svg.logo {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.ant-message-notice-content {
+  background: $dark-grey !important;
+  border: 3px solid orange;
+  border-radius: 4px !important;
+  color: $orange;  
+  font-family: Colus, "Colus Regular", Inter, system-ui, Avenir, Helvetica,
+}
+.anticon {
+  display: none !important;
 }
