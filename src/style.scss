@@ -138,11 +138,17 @@ p {
         align-items: center;
 
       }
+      .cardLogo {
+        height: 80px;
+      }
     }
 
     .cardWrapper:hover {
+      transform: translate(0px, -40px) scale(1.2);
+      z-index: 99;
+      transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
       .cardRoot {
-        transform: translate(0, -20px);
+
       }
       .cardActions {
 

@@ -14,6 +14,7 @@
     <div v-if="card" class="cardRoot">
         <div class="top">
             <Logo></Logo>
+            <img class="cardLogo" src="src/assets/icons/proficiencies/pb01.svg">
             <h2>{{ card?.Name }}</h2>
             <h5>{{ card?.Traits }}</h5>
         </div>
