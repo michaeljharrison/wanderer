@@ -13,10 +13,15 @@
         </div>
     <div v-if="card" class="cardRoot">
         <div class="top">
-            <Logo></Logo>
-            <img class="cardLogo" src="src/assets/icons/proficiencies/pb01.svg">
-            <h2>{{ card?.Name }}</h2>
-            <h5>{{ card?.Traits }}</h5>
+            <!-- I've put the icon styling on the cardLogo class, so if you update this icon to be dynamic, LMK if I need to change anything. ATM it's only doing sizing anyway. --> 
+            <div class="cardLogoContainer">
+                <img class="cardLogo" src="src/assets/icons/proficiencies/pb01.svg">
+            </div>
+            <div class="cardTextContainer">
+                <h2>{{ card?.Name }}</h2>
+                <h5>{{ card?.Traits }}</h5>
+            </div>
+
         </div>
         <div class="bottom">
             <p class="subtle">{{ card['Flavour Text'] }}</p>

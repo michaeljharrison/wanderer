@@ -138,8 +138,22 @@ p {
         align-items: center;
 
       }
+
+      .cardLogoContainer {
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cardTextContainer {
+        flex-shrink: 1;
+      }
+
       .cardLogo {
         height: 80px;
+        justify-content: center;
+        align-items: center;
+
       }
     }
 
@@ -157,7 +171,7 @@ p {
       -moz-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
       -o-transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
       transition: all 0.25s cubic-bezier(0, 1.5, 1, 1.1);
-      transition: opacity 0.3s linear;
+      transition: all 0.3s linear;
       opacity: 1;
       }
     }
@@ -187,14 +201,17 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        align-content: stretch;
+        padding-top: 4px;
+        padding-bottom: 4px;
         height: 50%;
+        overflow: hidden;
         h1,
         h2 {
-          font-size: 22px;
+          font-size: 20px;
           text-transform: uppercase;
           line-height: 24px;
+          margin-bottom: 0;
         }
         h3,
         h4,
@@ -204,6 +221,7 @@ p {
           font-family: Colus;
           letter-spacing: -0.5px;
           text-transform: uppercase;
+          margin-bottom: 0;
         }
       }
 
