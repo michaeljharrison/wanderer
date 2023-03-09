@@ -4,6 +4,7 @@ import App from './App.vue'
 import {store} from './store'
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
+import OBR from "@owlbear-rodeo/sdk";
 
 // Create App.
 const app = createApp(App)
@@ -13,3 +14,12 @@ app.use(store);
 app.use(Antd);
 // Mount application.
 app.mount('#app')
+
+OBR.action.isOpen(() => {
+    OBR.modal.open({
+        id: "exampleModal",
+        url: "/modal",
+        fullScreen: 1
+    })
+});
+
