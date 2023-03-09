@@ -153,7 +153,7 @@ p {
   }
 
   .cardLogo {
-    height: 80px;
+    height: 120px;
     justify-content: center;
     align-items: center;
 
@@ -309,7 +309,7 @@ p {
       }
 
       .cardLogo {
-        height: 80px;
+        height: 120px;
         justify-content: center;
         align-items: center;
 
@@ -344,6 +344,8 @@ p {
 }
 
 .ant-layout-content {
+  height: 95%;
+  overflow: hidden;
   .menu {
     background: $darkGradient;
     border: 1px solid #ff8a00;
