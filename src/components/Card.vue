@@ -138,6 +138,7 @@
 <script>
 import { message } from 'ant-design-vue';
 import { mapState } from 'vuex'
+import OBR from "@owlbear-rodeo/sdk";
 export default {
     name: 'Card',
     props: ['card', 'hidden', 'active'],
@@ -149,18 +150,22 @@ export default {
         play() {
             this.$store.commit('playCard', this.card)
             message.info(`Playing ${this.card?.Name}`);
+            OBR.notification.show(`played a card.`);
         },
         discard() {
             this.$store.commit('discard', this.card)
             message.info(`Discarded ${this.card?.Name}`);
+            OBR.notification.show(`Discarded ${this.card?.Name}`);
         },
         revealActive() {
             this.$store.commit('revealCard')
             message.info(`Revealed ${this.card?.Name}`);
+            OBR.notification.show(`Revealed ${this.card?.Name}`);
         },
         discardActive() {
             this.$store.commit('discardActive', this.card)
             message.info(`Discarded ${this.card?.Name}`);
+            OBR.notification.show(`Discarded ${this.card?.Name}`);
         }
     },
     computed: {

@@ -21,6 +21,7 @@ import { ref } from 'vue'
 import { ref, onMounted } from 'vue'
 import { message } from 'ant-design-vue';
 import { mapGetters } from 'vuex'
+import OBR from "@owlbear-rodeo/sdk";
 export default {
     name: 'Deck List',
     data() {
@@ -33,7 +34,9 @@ export default {
             this.$store.commit('setDeck', deck)
             this.$store.commit('toggleDrawer')
             message.info(`Selected ${deck.name}`);
+            OBR.notification.show(`${deck.name} has been selected.`,'SUCCESS');
         }
+        
     },
     computed: {
         ...mapGetters(['deckList', 'drawerOpen'])
