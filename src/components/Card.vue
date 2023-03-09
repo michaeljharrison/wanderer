@@ -31,8 +31,8 @@
                 </p>
             </div>
         </div>
-        <div v-if="card" class="cardRoot">
-            CARD BACK
+        <div v-if="card" class="cardRoot cardBack">
+            <img class="cardBackImage" src="src\assets\cardbacks\CombatCard.svg">
         </div>
         <div v-else>
             <a-loading></a-loading>

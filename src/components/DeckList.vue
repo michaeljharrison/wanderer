@@ -3,7 +3,7 @@
     <div class="deckListRoot">
         <a-list size="large" :data-source="deckList">
             <template #renderItem="{ item }">
-                <a-list-item><a-button type="primary" @click="selectDeck(item)">
+                <a-list-item><a-button class="ant-btn-wide" type="primary" @click="selectDeck(item)">
                         <p>{{ item?.name }}</p>
                     </a-button></a-list-item>
             </template>
@@ -52,13 +52,17 @@ export default {
     flex-wrap:wrap;
     flex-grow:1;
     flex-shrink:1;
-    padding: 0px;
+    padding: auto;
     .ant-list-item {
         border-bottom: 0px;
+        padding: 10px 2px;
     }
   }
   h2 {
     text-align: center;
   }
+.ant-list-item {
+    max-width: 40%;
+}
 }
 </style>
